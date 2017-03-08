@@ -11,7 +11,7 @@ Dans un premier temps concentrons nous sur la récupération d'une entité User 
 -[x] UserDao.findByFirstName -> Ecrire la requete pour recuperer un utilisateur par nom
 -[x] UserDao.UserMapper.mapRow : Ecrire le RowMapper permettant de convertir un ResultSet en un User
 
-@[Mapping User]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/mapping/UserDao.java",,"src/main/java/fr/ccavalier/hibernate/course/mapping/User.java","src/test/resources/mapping/create-db.sql","src/test/resources/mapping/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.mapping.UserDaoTest#testFindByName", "layout":"aside"})
+@[Mapping User]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/mapping/UserDao.java","src/main/java/fr/ccavalier/hibernate/course/mapping/User.java","src/test/resources/mapping/create-db.sql","src/test/resources/mapping/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.mapping.UserDaoTest#testFindByName", "layout":"aside"})
 
 Nous avons écrit une requete SQL qui a remonté un tupe de la table User et qui a été converti en un objet User dans notre application.  
 Mais la table User possède une association vers des Media qui correspond à l'ensemble des coordonnées pour un utilisateur et nous voulons récupérer cette liste lors d'un appel à la méthode findByFirstName.
