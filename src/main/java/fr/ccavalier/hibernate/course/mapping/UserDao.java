@@ -41,13 +41,6 @@ public class UserDao {
                 params,
                 new UserMapper());
 
-        String getMedias = "";//recuperer la liste de medias
-
-        params.clear();
-
-        //cette commande va executer la requete de requperation de medias
-        List<Map<String, Object>> asso_media = namedParameterJdbcTemplate.queryForList(getMedias, params);
-
         return result;
 
     }
@@ -75,15 +68,19 @@ public class UserDao {
 
     private static final class UserMapper implements RowMapper<User> {
 
+        @Override
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-            // Write the mapper for a User here
+            // Write the mapper to convert a ResultSet to a User
             return null;
         }
+    }
 
-        public static List<User.Media> mapContacts(List<Map<String, Object>> asso_media) {
-            List<User.Media> mediaList = new ArrayList<User.Media>();
-            // Mapper for type Media
-            return mediaList;
+    private static final class MediaMapper implements RowMapper<User.Media> {
+
+        @Override
+        public User.Media mapRow(ResultSet resultSet, int i) throws SQLException {
+            // Write the mapper to convert a ResultSet to a Media
+            return null;
         }
     }
 

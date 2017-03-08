@@ -39,14 +39,24 @@ public class UserDaoTest {
     public void testFindByName() {
         User user = userDao.findByFirstName("Jean");
 
-        Assert.assertNotNull(user);
-        Assert.assertEquals(1, user.getId().intValue());
-        Assert.assertEquals("Jean", user.getFirstName());
-        Assert.assertEquals("Perpignan", user.getCity());
-        Assert.assertEquals("Perpignan", user.getCity());
+        Assert.assertNotNull("le user renvoyé est null", user);
+        Assert.assertEquals("l'attribut id de l'objet User n'est pas renseigné",1, user.getId().intValue());
+        Assert.assertEquals("l'attribut firstName de l'objet User n'est pas renseigné","Jean", user.getFirstName());
+        Assert.assertEquals("l'attribut city de l'objet User n'est pas renseigné","Perpignan", user.getCity());
+    }
+
+    @Test
+    public void testMediaMappingOnFindByName() {
+        User user = userDao.findByFirstName("Jean");
+
+        Assert.assertNotNull("le user renvoyé est null", user);
+        Assert.assertEquals("l'attribut id de l'objet User n'est pas renseigné",1, user.getId().intValue());
+        Assert.assertEquals("l'attribut firstName de l'objet User n'est pas renseigné","Jean", user.getFirstName());
+        Assert.assertEquals("l'attribut city de l'objet User n'est pas renseigné","Perpignan", user.getCity());
         assertMethodExistAndTestExecution(user, "getContacts", (List<?> list) -> {
             Assert.assertEquals(2, list.size());
             assertMethodExistAndTestExecution(list.get(0), "getValue", (String s) -> Assert.assertEquals("0463626712", s));
+            assertMethodExistAndTestExecution(list.get(1), "getValue", (String s) -> Assert.assertEquals("0663233212", s));
         });
 
     }

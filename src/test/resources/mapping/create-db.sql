@@ -9,11 +9,11 @@ CREATE TABLE users (
 
 CREATE TABLE media (
     id INT primary key,
-    type varchar(30)
+    type varchar(30),
+    value varchar(50)
 );
 
 create TABLE media_users(
     id_user int references USERS(ID),
     id_media int references media(ID),
-    contact varchar(50)
 );
