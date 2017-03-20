@@ -39,7 +39,7 @@ public class UserDaoTest {
     public void testFindByName() {
         User user = userDao.findByFirstName("Jean");
 
-        Assert.assertNotNull("le user renvoyé est null", user);
+        Assert.assertNotNull("le user renvoyé est null, avez vous crée le mapper?", user);
         Assert.assertEquals("l'attribut id de l'objet User n'est pas renseigné",1, user.getId().intValue());
         Assert.assertEquals("l'attribut firstName de l'objet User n'est pas renseigné","Jean", user.getFirstName());
         Assert.assertEquals("l'attribut city de l'objet User n'est pas renseigné","Perpignan", user.getCity());
@@ -49,7 +49,7 @@ public class UserDaoTest {
     public void testMediaMappingOnFindByName() {
         User user = userDao.findByFirstName("Jean");
 
-        Assert.assertNotNull("le user renvoyé est null", user);
+        Assert.assertNotNull("le user renvoyé est null, avez vous crée le mapper?", user);
         Assert.assertEquals("l'attribut id de l'objet User n'est pas renseigné",1, user.getId().intValue());
         Assert.assertEquals("l'attribut firstName de l'objet User n'est pas renseigné","Jean", user.getFirstName());
         Assert.assertEquals("l'attribut city de l'objet User n'est pas renseigné","Perpignan", user.getCity());

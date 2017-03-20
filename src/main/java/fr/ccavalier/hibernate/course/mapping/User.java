@@ -1,6 +1,7 @@
 package fr.ccavalier.hibernate.course.mapping;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,8 +17,52 @@ public class User {
     String city;
     String email;
 
+
+    public List<Media> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<Media> contacts) {
+        this.contacts = contacts;
+    }
+
+    List<Media> contacts = Collections.emptyList();
+
     // Complete Media class
     static class Media{
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        private int id;
+
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        private String type;
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        private String value;
+
+
 
     }
 

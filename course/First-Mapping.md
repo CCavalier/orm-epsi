@@ -13,7 +13,7 @@ Dans un premier temps concentrons nous sur la récupération d'une entité User 
 
 @[Mapping User]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/mapping/UserDao.java","src/main/java/fr/ccavalier/hibernate/course/mapping/User.java","src/test/resources/mapping/create-db.sql","src/test/resources/mapping/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.mapping.UserDaoTest#testFindByName", "layout":"aside"})
 
-Nous avons écrit une requete SQL qui a remonté un tupe de la table User et qui a été converti en un objet User dans notre application.  
+Nous avons écrit une requete SQL qui a remonté un tuple de la table User et qui a été converti en un objet User dans notre application.
 Mais la table User possède une association vers des Media qui correspond à l'ensemble des coordonnées pour un utilisateur et nous voulons récupérer cette liste lors d'un appel à la méthode findByFirstName.
 
 ?[Etapes à suivre]
@@ -26,7 +26,7 @@ Mais la table User possède une association vers des Media qui correspond à l'e
 @[Mapping association]({"stubs": ["src/main/java/fr/ccavalier/hibernate/course/mapping/UserDao.java","src/main/java/fr/ccavalier/hibernate/course/mapping/User.java","src/test/resources/mapping/create-db.sql","src/test/resources/mapping/insert-data.sql"],"command": "fr.ccavalier.hibernate.course.mapping.UserDaoTest#testMediaMappingOnFindByName", "layout":"aside"})
 
 
-Maintenant, au tour de l'insertion de donnée.
+Maintenant, au tour de l'insertion de données.
 
 ?[Etapes à suivre]
 - [x] UserDao.add : Completez la méthode pour insérer un User
